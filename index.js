@@ -76,7 +76,6 @@ bot.command('test', function (ctx) {
 bot.command('7am', ctx => {
    database.getData(DIR+"/"+`users/${ctx.user_id}`, function (data, error) {
         if (!error && data.state !== undefined) {
-            // var flag = false;
             if (data.state === 'video3_2') {
                 sendState(ctx,"video3_2","video3_3")
 
@@ -190,8 +189,8 @@ app.post("/", function (req, res) {
                     bot.reply(ctx.user_id, frases.video6);
                     break;
                 case 'watch1':
-                    sendState(ctx,"video6_pay","video3_1")
-                    sendTimeoutState(ctx,"video3_1","video3_2",5000,true)//172800000
+                    sendState(ctx,"video6_pay","video1_1")
+                    sendTimeoutState(ctx,"video1_1","video1_2",5000,true)//172800000
                     break;
                 case 'watch2':
                     bot.reply(ctx.user_id, frases.video7_about);
